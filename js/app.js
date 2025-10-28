@@ -1,3 +1,4 @@
+// Tiny helpers
 const $ = (s, el=document) => el.querySelector(s);
 const $$ = (s, el=document) => [...el.querySelectorAll(s)];
 
@@ -22,35 +23,35 @@ const els = {
   search: $('#search')
 };
 
+// Data state
 let tracks = [];
 let stations = [];
-let queue = [];           // unified play queue (tracks + stations)
+let queue = [];
 let idx = -1;
 let repeat = false;
 let shuffle = false;
 let seeking = false;
 let fadeSec = 1.0;
 
-// Persistent settings
+// Persisted settings
 const savedVol = Number(localStorage.getItem('office.vol') ?? 0.25);
 const savedFade = Number(localStorage.getItem('office.fade') ?? 1.0);
 const savedOffice = localStorage.getItem('office.mode') !== '0';
-
 els.vol.value = savedVol;
 els.player.volume = savedVol;
 els.fade.value = savedFade;
 fadeSec = savedFade;
 els.officeMode.checked = savedOffice;
-
 if(savedOffice) capVolume();
 
-// Load data
+// Boot
 Promise.all([
   fetch('data/playlist.json').then(r => r.json()),
   fetch('data/stations.json').then(r => r.json())
 ]).then(([pl, st]) => {
-  tracks = pl.map(t => ({...t, kind:'track'}));
-  stations = st.map(s => ({...s, kind:'station'}));
+  // Expect playlist.json to be an array of track objects (template provided)
+  tracks = (pl || []).map(t => ({...t, kind:'track'}));
+  stations = (st || []).map(s => ({...s, kind:'station'}));
   queue = [...tracks, ...stations];
   renderLists();
 }).catch(err => {
@@ -58,36 +59,33 @@ Promise.all([
   els.trackList.innerHTML = `<li>Failed to load playlist.</li>`;
 });
 
+// --- Render
 function renderLists(filter=''){
-  const filt = filter.trim().toLowerCase();
+  const q = filter.trim().toLowerCase();
   const t = tracks.filter(x =>
-    !filt || [x.title,x.artist,(x.tags||[]).join(' ')].join(' ').toLowerCase().includes(filt)
+    !q || [x.title,x.artist,(x.tags||[]).join(' ')].join(' ').toLowerCase().includes(q)
   );
   const s = stations.filter(x =>
-    !filt || [x.name,x.genre].join(' ').toLowerCase().includes(filt)
+    !q || [x.name,x.genre].join(' ').toLowerCase().includes(q)
   );
 
   els.trackList.innerHTML = t.map(x => liRow(x)).join('');
   els.stationList.innerHTML = s.map(x => liRow(x)).join('');
 
-  // wire buttons
   $$('#trackList .playbtn').forEach(btn => btn.addEventListener('click', () => {
-    const id = btn.dataset.id;
-    playById(id);
+    playById(btn.dataset.id);
   }));
   $$('#stationList .playbtn').forEach(btn => btn.addEventListener('click', () => {
-    const id = btn.dataset.id;
-    playById(id);
+    playById(btn.dataset.id);
   }));
 }
 
 function liRow(item){
-  const leftTitle = item.kind === 'track' ? item.title : item.name;
-  const leftSub   = item.kind === 'track' ? (item.artist || '') : (item.genre || '');
-  const badge     = item.kind === 'track' ? 'IA' : 'Radio';
-  const era = item.id.includes('60') ? '60s' : item.id.includes('70') ? '70s' :
-            item.id.includes('80') ? '80s' : (item.kind === 'track' ? 'IA' : 'Radio');
-  const badge = era;
+  const isTrack = item.kind === 'track';
+  const leftTitle = isTrack ? item.title : item.name;
+  const leftSub   = isTrack ? (item.artist || '') : (item.genre || '');
+  const badge     = isTrack ? (guessEraFromTags(item.tags) || 'IA') : (guessEraFromName(item.name) || 'Radio');
+
   return `
     <li>
       <div class="rowL">
@@ -103,6 +101,23 @@ function liRow(item){
     </li>`;
 }
 
+function guessEraFromTags(tags=[]){
+  const s = (tags.join(' ') || '').toLowerCase();
+  if(s.includes('196') || s.includes('60s')) return '60s';
+  if(s.includes('197') || s.includes('70s')) return '70s';
+  if(s.includes('198') || s.includes('80s')) return '80s';
+  return '';
+}
+
+function guessEraFromName(name=''){
+  const n = name.toLowerCase();
+  if(n.includes('60')) return '60s';
+  if(n.includes('70')) return '70s';
+  if(n.includes('80')) return '80s';
+  return '';
+}
+
+// --- Playback controls
 function playById(id){
   const i = queue.findIndex(x => x.id === id);
   if(i >= 0){ idx = i; playCurrent(true); }
@@ -115,7 +130,7 @@ function next(auto=false){
     idx = n;
   } else {
     idx = (idx + 1) % queue.length;
-    if(!repeat && auto && idx === 0) return; // reached end on auto-advance with repeat=off
+    if(!repeat && auto && idx === 0) return; // stop at end if repeat is off
   }
   playCurrent(true);
 }
@@ -133,30 +148,25 @@ function updateNow(meta){
   els.nowSub.textContent = sub || '—';
   els.nowLinks.innerHTML = '';
 
-  if(isTrack && meta.archive){
+  if(isTrack && meta.archive && meta.archive.page){
     const a = document.createElement('a');
-    a.href = meta.archive.page;
-    a.target = '_blank';
-    a.rel = 'noopener';
+    a.href = meta.archive.page; a.target = '_blank'; a.rel = 'noopener';
     a.textContent = 'Open on Internet Archive';
     els.nowLinks.appendChild(a);
   }
   if(!isTrack && meta.site){
     const a = document.createElement('a');
-    a.href = meta.site;
-    a.target = '_blank';
-    a.rel = 'noopener';
+    a.href = meta.site; a.target = '_blank'; a.rel = 'noopener';
     a.textContent = 'Station Site';
     els.nowLinks.appendChild(a);
   }
 
-  // Media Session (hardware keys & OS UI)
   if('mediaSession' in navigator){
     try{
       navigator.mediaSession.metadata = new MediaMetadata({
         title,
         artist: isTrack ? (meta.artist||'') : meta.name,
-        album: isTrack && meta.archive ? meta.archive.identifier : (meta.genre||''),
+        album: isTrack && meta.archive ? (meta.archive.identifier||'') : (meta.genre||''),
         artwork: []
       });
       navigator.mediaSession.setActionHandler('previoustrack', prev);
@@ -172,6 +182,7 @@ function updateNow(meta){
 
 async function playCurrent(startFresh=false){
   const meta = queue[idx];
+  if(!meta) return;
   updateNow(meta);
 
   const src = meta.src;
@@ -215,9 +226,7 @@ async function crossfadeTo(nextSrc){
   }
 }
 
-function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
-
-// UI wiring
+// --- UI wiring
 els.playBtn.addEventListener('click', () => togglePlay());
 els.prevBtn.addEventListener('click', prev);
 els.nextBtn.addEventListener('click', () => next(false));
@@ -260,29 +269,21 @@ els.seek.addEventListener('change', () => {
   seeking = false;
 });
 
-document.addEventListener('keydown', (e) => {
-  if(e.target === els.search) return;
-  if(e.code === 'Space'){ e.preventDefault(); togglePlay(); }
-  if(e.code === 'ArrowRight'){ next(false); }
-  if(e.code === 'ArrowLeft'){ prev(); }
-  if(e.key.toLowerCase() === 's'){ shuffle = !shuffle; els.shuffleBtn.style.borderColor = shuffle ? '#47a3ff' : '#263647'; }
-  if(e.key.toLowerCase() === 'r'){ repeat = !repeat; els.repeatBtn.style.borderColor = repeat ? '#47a3ff' : '#263647'; }
-});
-
 els.search.addEventListener('input', (e) => renderLists(e.target.value));
 
+// --- utils
 function fmtTime(s){
   s = Math.max(0, Math.floor(s));
   const m = Math.floor(s/60);
   const ss = (s%60).toString().padStart(2,'0');
   return `${m}:${ss}`;
 }
-
+function sleep(ms){ return new Promise(r => setTimeout(r, ms)); }
 function escapeHtml(s){ return (s||'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m])); }
-
 function capVolume(){
   // Office Mode caps volume to 0.35
   if(els.officeMode.checked && Number(els.vol.value) > 0.35){
     els.vol.value = 0.35;
+    els.player.volume = 0.35;
   }
 }
