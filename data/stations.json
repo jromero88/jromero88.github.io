@@ -1,18 +1,26 @@
 [
   {
-    "id": "somafm-groovesalad",
+    "id": "somafm-insound-60s",
     "type": "radio",
-    "name": "SomaFM: Groove Salad (MP3 128k)",
-    "genre": "Downtempo / Ambient",
-    "src": "https://ice5.somafm.com/groovesalad-128-mp3",
-    "site": "https://somafm.com/groovesalad/"
+    "name": "SomaFM: The In-Sound (60s/70s Euro Pop)",
+    "genre": "60s/70s hipster Euro pop, psych, ye-ye",
+    "src": "https://ice5.somafm.com/insound-128-mp3",
+    "site": "https://somafm.com/insound/"
   },
   {
-    "id": "somafm-gsclassic",
+    "id": "somafm-leftcoast-70s",
     "type": "radio",
-    "name": "SomaFM: Groove Salad Classic (MP3 128k)",
-    "genre": "Ambient Classics",
-    "src": "https://ice5.somafm.com/gsclassic-128-mp3",
-    "site": "https://somafm.com/gsclassic/"
+    "name": "SomaFM: Left Coast 70s",
+    "genre": "Mellow album rock from the 70s",
+    "src": "https://ice5.somafm.com/seventies-128-mp3",
+    "site": "https://somafm.com/seventies/"
+  },
+  {
+    "id": "somafm-underground-80s",
+    "type": "radio",
+    "name": "SomaFM: Underground 80s",
+    "genre": "Early 80s UK synthpop & new wave",
+    "src": "https://ice5.somafm.com/u80s-128-mp3",
+    "site": "https://somafm.com/u80s/"
   }
 ]
