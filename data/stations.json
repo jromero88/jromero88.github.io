@@ -1,19 +1,19 @@
 [
   {
-    "id": "somafm-insound-60s",
+    "id": "hitsradio-50s-60s-hits",
     "type": "radio",
-    "name": "SomaFM: The In-Sound (60s/70s Euro Pop)",
-    "genre": "60s/70s ye-ye, psych, mod",
-    "src": "https://ice5.somafm.com/insound-128-mp3",
-    "site": "https://somafm.com/insound/"
+    "name": "HitsRadio: 50s 60s Hits",
+    "genre": "Hits of the 50s and 60s.",
+    "src": "https://17573.live.streamtheworld.com/977_OLDIES.mp3",
+    "site": "https://www.radio.net/s/hitsradio50s60s"
   },
   {
-    "id": "somafm-leftcoast-70s",
+    "id": "hitsradio-70s-rock",
     "type": "radio",
-    "name": "SomaFM: Left Coast 70s",
-    "genre": "Mellow album rock from the 70s",
-    "src": "https://ice5.somafm.com/seventies-128-mp3",
-    "site": "https://somafm.com/seventies/"
+    "name": "HitsRadio: 70's Rock",
+    "genre": "Classic rock of the 60s and 70s to today's best rock.",
+    "src": "https://14543.live.streamtheworld.com/977_CLASSROCK.mp3",
+    "site": "https://www.radio.net/s/hitsradio70srock"
   },
   {
     "id": "stereocien-80-90s-actual",
@@ -22,5 +22,13 @@
     "genre": "Música de los 80s, 90s y actual.",
     "src": "https://18213.live.streamtheworld.com/XHMMFM.mp3",
     "site": "https://stereocien.com.mx/"
+  },
+  {
+    "id": "zenofm-viejitas-pero-bonitas",
+    "type": "radio",
+    "name": "ZenoFM: Viejitas Pero Bonitas",
+    "genre": "Música de los 80s, 90s y actual.",
+    "src": "https://stream-167.zeno.fm/6ttynxp35k0uv?zt=eyJhbGciOiJIUzI1NiJ9.eyJzdHJlYW0iOiI2dHR5bnhwMzVrMHV2IiwiaG9zdCI6InN0cmVhbS0xNjcuemVuby5mbSIsInJ0dGwiOjUsImp0aSI6IkxQY1owLWUwUjVlUjM0YktCUGlVNmciLCJpYXQiOjE3NjE2ODQxODUsImV4cCI6MTc2MTY4NDI0NX0.yxr-D6VKolVLJi1npIdgiPsKdXxfQq4Pfe89j83XA6E&rj-tok=AAABeMr5CQEA4V6RKX5wLAeHGg&rj-ttl=5",
+    "site": "http://www.viejitasperobonitasradio.com/"
   }
 ]
