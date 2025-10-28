@@ -13,7 +13,7 @@
     "type": "archive",
     "title": "Chuck Berry - You Never Can Tell",
     "artist": "Chuck Berry",
-    "src": https://archive.org/download/60s-hits/%20Chuck%20Berry%20-%20You%20never%20can%20tell.mp3",
+    "src": "https://archive.org/download/60s-hits/%20Chuck%20Berry%20-%20You%20never%20can%20tell.mp3",
     "archive": { "identifier": "hits-of-60s", "page": "https://archive.org/details/hits-of-60s" },
     "tags": ["1960s","rock","classic"]
   },
