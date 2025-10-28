@@ -1,1 +1,18 @@
-
+[
+  {
+    "id": "somafm-groovesalad",
+    "type": "radio",
+    "name": "SomaFM: Groove Salad (MP3 128k)",
+    "genre": "Downtempo / Ambient",
+    "src": "https://ice5.somafm.com/groovesalad-128-mp3",
+    "site": "https://somafm.com/groovesalad/"
+  },
+  {
+    "id": "somafm-gsclassic",
+    "type": "radio",
+    "name": "SomaFM: Groove Salad Classic (MP3 128k)",
+    "genre": "Ambient Classics",
+    "src": "https://ice5.somafm.com/gsclassic-128-mp3",
+    "site": "https://somafm.com/gsclassic/"
+  }
+]
