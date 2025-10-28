@@ -1,92 +1,50 @@
 [
   {
-    "id": "60s-unchained-melody",
+    "id": "60s-you-can-never-tell",
     "type": "archive",
-    "title": "The Righteous Brothers — Unchained Melody",
-    "artist": "The Righteous Brothers",
-    "src": "https://archive.org/download/60s-hits/%20Righteous%20Brothers%20-%20Unchained%20melody.mp3",
-    "archive": { "identifier": "60s-hits", "page": "https://archive.org/details/60s-hits" },
-    "tags": ["1960s","pop","classic"]
-  },
-  {
-    "id": "60s-you-never-can-tell",
-    "type": "archive",
-    "title": "Chuck Berry - You Never Can Tell",
+    "title": "You Can Never Tell (1964)",
     "artist": "Chuck Berry",
     "src": "https://archive.org/download/60s-hits/%20Chuck%20Berry%20-%20You%20never%20can%20tell.mp3",
-    "archive": { "identifier": "hits-of-60s", "page": "https://archive.org/details/hits-of-60s" },
-    "tags": ["1960s","rock","classic"]
+    "archive": {
+      "identifier": "60s-hits",
+      "page": "https://archive.org/details/60s-hits"
+    },
+    "tags": ["1960s", "classic", "vocal"]
   },
   {
-    "id": "60s-san francisco",
+    "id": "60s-example-1",
     "type": "archive",
-    "title": "Scott McKenzie — San Francisco (Be Sure to Wear Flowers in Your Hair)",
-    "artist": "Scott McKenzie",
-    "src": "https://archive.org/download/60s-hits/San Francisco%20-%20Scott McKenzie.mp3",
-    "archive": { "identifier": "60s-hits", "page": "https://archive.org/details/60s-hits" },
-    "tags": ["1960s","folk-rock","classic"]
+    "title": "Song Title (1967)",
+    "artist": "Artist Name",
+    "src": "https://archive.org/download/IDENTIFIER/FILENAME.mp3",
+    "archive": {
+      "identifier": "IDENTIFIER",
+      "page": "https://archive.org/details/IDENTIFIER"
+    },
+    "tags": ["1960s", "classic", "vocal"]
   },
   {
-    "id": "70s-brown-sugar",
+    "id": "70s-example-1",
     "type": "archive",
-    "title": "The Rolling Stones — Brown Sugar",
-    "artist": "The Rolling Stones",
-    "src": "https://archive.org/download/sounds-of-70s-rock/02%20Brown%20Sugar%20-%20The%20Rolling%20Stones.mp3",
-    "archive": { "identifier": "sounds-of-70s-rock", "page": "https://archive.org/details/sounds-of-70s-rock" },
-    "tags": ["1970s","rock","classic"]
+    "title": "Song Title (1974)",
+    "artist": "Artist Name",
+    "src": "https://archive.org/download/IDENTIFIER/FILENAME.mp3",
+    "archive": {
+      "identifier": "IDENTIFIER",
+      "page": "https://archive.org/details/IDENTIFIER"
+    },
+    "tags": ["1970s", "classic", "vocal"]
   },
   {
-    "id": "70s-bang-a-gong",
+    "id": "80s-example-1",
     "type": "archive",
-    "title": "T. Rex — Bang a Gong (Get It On)",
-    "artist": "T. Rex",
-    "src": "https://archive.org/download/sounds-of-70s-rock/01%20Bang%20a%20Gong%20Get%20It%20On%20-%20T.%20Rex.mp3",
-    "archive": { "identifier": "sounds-of-70s-rock", "page": "https://archive.org/details/sounds-of-70s-rock" },
-    "tags": ["1970s","glam-rock","classic"]
-  },
-  {
-    "id": "70s-make-it-with-you",
-    "type": "archive",
-    "title": "Bread — Make It With You",
-    "artist": "Bread",
-    "src": "https://archive.org/download/simply-the-best-of-the-70s-vol-1/Make%20It%20With%20You%20-%20Bread.mp3",
-    "archive": { "identifier": "simply-the-best-of-the-70s-vol-1", "page": "https://archive.org/details/simply-the-best-of-the-70s-vol-1" },
-    "tags": ["1970s","soft-rock","classic"]
-  },
-  {
-    "id": "80s-white-wedding",
-    "type": "archive",
-    "title": "Billy Idol — White Wedding",
-    "artist": "Billy Idol",
-    "src": "https://archive.org/download/the-80s-collection/White%20Wedding%20-%20Billy%20Idol.mp3",
-    "archive": { "identifier": "the-80s-collection", "page": "https://archive.org/details/the-80s-collection" },
-    "tags": ["1980s","new-wave","classic"]
-  },
-  {
-    "id": "80s-take-on-me",
-    "type": "archive",
-    "title": "a-ha — Take On Me",
-    "artist": "a-ha",
-    "src": "https://archive.org/download/80s-collection/Take%20On%20Me%20-%20a-ha.mp3",
-    "archive": { "identifier": "80s-collection", "page": "https://archive.org/details/80s-collection" },
-    "tags": ["1980s","pop","classic"]
-  },
-  {
-    "id": "80s-addicted-to-love",
-    "type": "archive",
-    "title": "Robert Palmer — Addicted to Love",
-    "artist": "Robert Palmer",
-    "src": "https://archive.org/download/80s-hits_202212/Addicted%20to%20Love%20-%20Robert%20Palmer.mp3",
-    "archive": { "identifier": "80s-hits_202212", "page": "https://archive.org/details/80s-hits_202212" },
-    "tags": ["1980s","rock-pop","classic"]
-  },
-  {
-    "id": "80s-dont-you-want-me",
-    "type": "archive",
-    "title": "The Human League — Don’t You Want Me",
-    "artist": "The Human League",
-    "src": "https://archive.org/download/the-1983-19-twilight-zone-golden-earring/Don’t%20You%20Want%20Me%20-%20The%20Human%20League.mp3",
-    "archive": { "identifier": "1983-19-twilight-zone-golden-earring", "page": "https://archive.org/details/1983-19-twilight-zone-golden-earring" },
-    "tags": ["1980s","synth-pop","classic"]
+    "title": "Song Title (1983)",
+    "artist": "Artist Name",
+    "src": "https://archive.org/download/IDENTIFIER/FILENAME.mp3",
+    "archive": {
+      "identifier": "IDENTIFIER",
+      "page": "https://archive.org/details/IDENTIFIER"
+    },
+    "tags": ["1980s", "classic", "vocal"]
   }
 ]
