@@ -1,38 +1,14 @@
 [
   {
-    "id": "mtcomp001-130",
+    "id": "library-1970s-groove",
     "type": "archive",
-    "title": "Jiva — Sous L'Eau À Pied",
-    "artist": "Monotonik Compilation #1",
-    "src": "https://archive.org/download/mtcomp001/Jiva%20-%20Sous%20L%27Eau%20A%20Pied.mp3",
+    "title": "Lee Mason & His Orchestra — The Hunter (1971)",
+    "artist": "Chappell Library",
+    "src": "https://archive.org/download/07-roger-webb-latin-blues/02%20Lee%20Mason%20%26%20His%20Orchestra%20-%20The%20Hunter%20%281971%29..mp3",
     "archive": {
-      "identifier": "mtcomp001",
-      "page": "https://archive.org/details/mtcomp001"
+      "identifier": "07-roger-webb-latin-blues",
+      "page": "https://archive.org/details/07-roger-webb-latin-blues"
     },
-    "tags": ["electronic","chill"]
-  },
-  {
-    "id": "mtcomp001-135",
-    "type": "archive",
-    "title": "Lackluster — Bothersome (Mother Mix)",
-    "artist": "Monotonik Compilation #1",
-    "src": "https://archive.org/download/mtcomp001/Lackluster%20-%20Bothersome%20%28Mother%20Mix%29.mp3",
-    "archive": {
-      "identifier": "mtcomp001",
-      "page": "https://archive.org/details/mtcomp001"
-    },
-    "tags": ["idm","downtempo"]
-  },
-  {
-    "id": "rubinstein-moonlight",
-    "type": "archive",
-    "title": "Beethoven — Moonlight Sonata (Rubinstein, 1962)",
-    "artist": "Arthur Rubinstein",
-    "src": "https://archive.org/download/BeethovenPianoSonataNo.14moonlightrubinstein/01%20Adagio%20sostenuto.mp3",
-    "archive": {
-      "identifier": "BeethovenPianoSonataNo.14moonlightrubinstein",
-      "page": "https://archive.org/details/BeethovenPianoSonataNo.14moonlightrubinstein"
-    },
-    "tags": ["classical","piano"]
+    "tags": ["1970s","library","instrumental"]
   }
 ]
