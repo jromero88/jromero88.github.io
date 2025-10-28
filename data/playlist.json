@@ -1,1 +1,38 @@
-
+[
+  {
+    "id": "mtcomp001-130",
+    "type": "archive",
+    "title": "Jiva — Sous L'Eau À Pied",
+    "artist": "Monotonik Compilation #1",
+    "src": "https://archive.org/download/mtcomp001/Jiva%20-%20Sous%20L%27Eau%20A%20Pied.mp3",
+    "archive": {
+      "identifier": "mtcomp001",
+      "page": "https://archive.org/details/mtcomp001"
+    },
+    "tags": ["electronic","chill"]
+  },
+  {
+    "id": "mtcomp001-135",
+    "type": "archive",
+    "title": "Lackluster — Bothersome (Mother Mix)",
+    "artist": "Monotonik Compilation #1",
+    "src": "https://archive.org/download/mtcomp001/Lackluster%20-%20Bothersome%20%28Mother%20Mix%29.mp3",
+    "archive": {
+      "identifier": "mtcomp001",
+      "page": "https://archive.org/details/mtcomp001"
+    },
+    "tags": ["idm","downtempo"]
+  },
+  {
+    "id": "rubinstein-moonlight",
+    "type": "archive",
+    "title": "Beethoven — Moonlight Sonata (Rubinstein, 1962)",
+    "artist": "Arthur Rubinstein",
+    "src": "https://archive.org/download/BeethovenPianoSonataNo.14moonlightrubinstein/01%20Adagio%20sostenuto.mp3",
+    "archive": {
+      "identifier": "BeethovenPianoSonataNo.14moonlightrubinstein",
+      "page": "https://archive.org/details/BeethovenPianoSonataNo.14moonlightrubinstein"
+    },
+    "tags": ["classical","piano"]
+  }
+]
