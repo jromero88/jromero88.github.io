@@ -16,11 +16,11 @@
     "site": "https://somafm.com/seventies/"
   },
   {
-    "id": "somafm-underground-80s",
+    "id": "stereocien-80-90s-actual",
     "type": "radio",
-    "name": "SomaFM: Underground 80s",
-    "genre": "Early 80s UK synthpop & new wave",
-    "src": "https://ice5.somafm.com/u80s-128-mp3",
-    "site": "https://somafm.com/u80s/"
+    "name": "StereoCien: 80s, 90s y Actual",
+    "genre": "Música de los 80s, 90s y actual.",
+    "src": "https://18213.live.streamtheworld.com/XHMMFM.mp3",
+    "site": "https://stereocien.com.mx/"
   }
 ]
