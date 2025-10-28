@@ -4,16 +4,16 @@
     "type": "archive",
     "title": "The Righteous Brothers — Unchained Melody",
     "artist": "The Righteous Brothers",
-    "src": "https://archive.org/download/60s-hits/02%20Unchained%20Melody%20-%20The%20Righteous%20Brothers.mp3",
+    "src": "https://archive.org/download/60s-hits/%20Righteous%20Brothers%20-%20Unchained%20melody.mp3",
     "archive": { "identifier": "60s-hits", "page": "https://archive.org/details/60s-hits" },
     "tags": ["1960s","pop","classic"]
   },
   {
-    "id": "60s-whiter-shade of pale",
+    "id": "60s-you-never-can-tell",
     "type": "archive",
-    "title": "Procol Harum — A Whiter Shade of Pale",
-    "artist": "Procol Harum",
-    "src": "https://archive.org/download/hits-of-60s/A%20Whiter%20Shade%20of%20Pale%20-%20Procol%20Harum.mp3",
+    "title": "Chuck Berry - You Never Can Tell",
+    "artist": "Chuck Berry",
+    "src": https://archive.org/download/60s-hits/%20Chuck%20Berry%20-%20You%20never%20can%20tell.mp3",
     "archive": { "identifier": "hits-of-60s", "page": "https://archive.org/details/hits-of-60s" },
     "tags": ["1960s","rock","classic"]
   },
