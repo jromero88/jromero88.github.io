@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Office Music · GitHub Pages</title>
+  <link rel="preconnect" href="https://archive.org" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🎵 Office Music</h1>
+    <div class="controls">
+      <label class="toggle">
+        <input id="officeMode" type="checkbox" checked />
+        <span>Office Mode</span>
+      </label>
+      <input id="search" type="search" placeholder="Search tracks & stations…" />
+    </div>
+  </header>
 
+  <main class="grid">
+    <section class="panel">
+      <h2>Internet Archive Tracks</h2>
+      <ul id="trackList" class="list"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Internet Radio</h2>
+      <ul id="stationList" class="list"></ul>
+    </section>
+
+    <section class="panel now">
+      <h2>Now Playing</h2>
+      <div id="nowMeta">
+        <div class="title">—</div>
+        <div class="sub">—</div>
+        <div class="links"></div>
+      </div>
+
+      <div class="transport">
+        <button id="prevBtn" title="Previous [←]">⏮</button>
+        <button id="playBtn" title="Play/Pause [Space]">▶️</button>
+        <button id="nextBtn" title="Next [→]">⏭</button>
+        <button id="shuffleBtn" title="Shuffle">🔀</button>
+        <button id="repeatBtn" title="Repeat">🔁</button>
+      </div>
+
+      <div class="sliders">
+        <label>Volume
+          <input id="vol" type="range" min="0" max="1" step="0.01" />
+        </label>
+        <label>Crossfade
+          <input id="fade" type="range" min="0" max="4" step="0.25" />
+        </label>
+      </div>
+
+      <div class="progress">
+        <span id="cur">0:00</span>
+        <input id="seek" type="range" min="0" max="100" step="0.1" value="0" />
+        <span id="dur">0:00</span>
+      </div>
+
+      <div class="tips">
+        ⌨️ Space: play/pause · ←/→: prev/next · S: shuffle · R: repeat
+      </div>
+    </section>
+  </main>
+
+  <audio id="player" crossorigin="anonymous"></audio>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
