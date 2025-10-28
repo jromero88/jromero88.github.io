@@ -3,35 +3,75 @@
   --accent:#47a3ff; --accent-2:#f08bff; --ok:#45d483; --warn:#ffb454;
 }
 *{box-sizing:border-box} html,body{height:100%}
-body{margin:0;background:linear-gradient(180deg,#0b0f14,#0b0f14 60%,#121a22);
-  color:var(--fg);font:16px/1.5 ui-sans-serif,system-ui,Segoe UI,Arial}
-.topbar{display:flex;gap:1rem;align-items:center;justify-content:space-between;
-  padding:14px 18px;border-bottom:1px solid #1f2a35;background:#0b1219;position:sticky;top:0}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#0b0f14,#0b0f14 60%,#121a22);
+  color:var(--fg);
+  font:16px/1.5 ui-sans-serif,system-ui,Segoe UI,Arial;
+}
+.topbar{
+  display:flex;gap:1rem;align-items:center;justify-content:space-between;
+  padding:14px 18px;border-bottom:1px solid #1f2a35;background:#0b1219;position:sticky;top:0
+}
 .topbar h1{margin:0;font-weight:700;letter-spacing:.2px}
 .controls{display:flex;gap:12px;align-items:center}
 .toggle{display:flex;gap:.5rem;align-items:center;color:var(--muted)}
-#search{padding:10px 12px;border-radius:10px;border:1px solid #223041;background:#101823;color:var(--fg);min-width:260px}
+#search{
+  padding:10px 12px;border-radius:10px;border:1px solid #223041;
+  background:#101823;color:var(--fg);min-width:260px
+}
 
-.grid{display:grid;gap:14px;padding:14px;grid-template-columns:2fr 2fr 3fr}
-.panel{background:var(--card);border:1px solid #1a2530;border-radius:16px;padding:14px;min-height:240px}
-.panel h2{margin:0 0 10px 0;color:var(--muted);font-size:14px;text-transform:uppercase;letter-spacing:.12em}
-.list{list-style:none;margin:0;padding:0;display:grid;gap:8px;max-height:62vh;overflow:auto}
-.list li{display:flex;gap:10px;align-items:center;justify-content:space-between;background:#0e1520;border:1px solid #1a2530;border-radius:12px;padding:10px}
+.grid{
+  display:grid;gap:14px;padding:14px;
+  grid-template-columns:2fr 2fr 3fr
+}
+.panel{
+  background:var(--card);border:1px solid #1a2530;border-radius:16px;
+  padding:14px;min-height:240px
+}
+.panel h2{
+  margin:0 0 10px 0;color:var(--muted);font-size:14px;
+  text-transform:uppercase;letter-spacing:.12em
+}
+.list{
+  list-style:none;margin:0;padding:0;display:grid;gap:8px;
+  max-height:62vh;overflow:auto
+}
+.list li{
+  display:flex;gap:10px;align-items:center;justify-content:space-between;
+  background:#0e1520;border:1px solid #1a2530;border-radius:12px;padding:10px
+}
 .rowL{display:flex;gap:10px;align-items:center;min-width:0}
-.badge{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid #2a3b4d;color:#a8bbcf}
+.badge{
+  font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid #2a3b4d;color:#a8bbcf
+}
 .title{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sub{color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rowR{display:flex;gap:8px;align-items:center}
-.playbtn{background:#111a26;border:1px solid #1b2a39;border-radius:10px;padding:6px 9px;color:#cfe4ff;cursor:pointer}
+.playbtn{
+  background:#111a26;border:1px solid #1b2a39;border-radius:10px;
+  padding:6px 9px;color:#cfe4ff;cursor:pointer
+}
 .playbtn:hover{border-color:#2a3c52}
 
 .panel.now .transport{display:flex;gap:8px;margin:10px 0}
-.panel.now button{border-radius:10px;border:1px solid #263647;background:#0f1723;color:#d8e8ff;padding:8px 10px;cursor:pointer}
+.panel.now button{
+  border-radius:10px;border:1px solid #263647;background:#0f1723;
+  color:#d8e8ff;padding:8px 10px;cursor:pointer
+}
 .panel.now button:hover{border-color:#355174}
 .sliders{display:flex;gap:16px;align-items:center}
 .sliders input{vertical-align:middle}
-.progress{display:grid;grid-template-columns:minmax(38px,60px) 1fr minmax(38px,60px);gap:8px;align-items:center;margin-top:10px}
+.progress{
+  display:grid;grid-template-columns:minmax(38px,60px) 1fr minmax(38px,60px);
+  gap:8px;align-items:center;margin-top:10px
+}
 .progress input{width:100%}
 .links a{color:var(--accent);text-decoration:none;margin-right:10px}
 .links a:hover{text-decoration:underline}
 .tips{color:var(--muted);font-size:12px;margin-top:8px}
+
+/* Small screens */
+@media (max-width: 900px){
+  .grid{grid-template-columns:1fr}
+}
