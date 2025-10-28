@@ -85,6 +85,9 @@ function liRow(item){
   const leftTitle = item.kind === 'track' ? item.title : item.name;
   const leftSub   = item.kind === 'track' ? (item.artist || '') : (item.genre || '');
   const badge     = item.kind === 'track' ? 'IA' : 'Radio';
+  const era = item.id.includes('60') ? '60s' : item.id.includes('70') ? '70s' :
+            item.id.includes('80') ? '80s' : (item.kind === 'track' ? 'IA' : 'Radio');
+  const badge = era;
   return `
     <li>
       <div class="rowL">
